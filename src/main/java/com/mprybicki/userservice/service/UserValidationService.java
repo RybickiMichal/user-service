@@ -15,8 +15,8 @@ public class UserValidationService {
     UserRepository userRepository;
 
     public void validateUser(@Valid User user) {
-        if(userRepository.existsByEmail(user.getEmail())){
-            throw new UserException("User with email " + user.getEmail() + " already exists");
+        if(userRepository.existsByUserName(user.getUserName())){
+            throw new UserException("User with email " + user.getUserName() + " already exists");
         }
     }
 }
