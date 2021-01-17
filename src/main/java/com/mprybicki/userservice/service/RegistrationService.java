@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 public class RegistrationService {
 
     UserRepository userRepository;
+    UserValidationService userValidationService;
 
     public void registerUser(User user) {
-    userRepository.save(user);
+        userValidationService.validateUser(user);
+        userRepository.save(user);
     }
 }
