@@ -37,7 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    //TODO add proper authorization (per sensor type)
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
